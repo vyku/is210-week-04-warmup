@@ -6,6 +6,7 @@
 # Import Python libs
 import unittest
 import mock
+import __builtin__
 
 class Lesson04Task04TestCase(unittest.TestCase):
     """
@@ -13,22 +14,19 @@ class Lesson04Task04TestCase(unittest.TestCase):
 
     """
 
-    def test_short_str(self):
+    def test_str_length(self):
         """
-        Tests that correct output is captured for a short string.
+        Tests that correct output is captured for a string.
+
+        This test will test both long and short strings.
         """
-        values = ['a']
-        with mock.patch('__builtin__.raw_input',  side_effect=values):
+        with mock.patch('__builtin__.raw_input') as mocked:
+            mocked.side_effect = ['a'] 
             import task_04
             self.assertEqual(task_04.LONGSTR, 'short')
 
-    def test_long_str(self):
-        """
-        Tests that correct output is captured for a long string.
-        """
-        values = ['a' * 100]
-        with mock.patch('__builtin__.raw_input',  side_effect=values):
-            import task_04
+            mocked.side_effect = ['a' * 100]
+            task_04 = reload(task_04)
             self.assertEqual(task_04.LONGSTR, 'long')
 
 

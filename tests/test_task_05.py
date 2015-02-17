@@ -20,10 +20,10 @@ class Lesson04Task05TestCase(unittest.TestCase):
 
         This test will try random numbers in each of the target ranges.
         """
-        levels = {'low': [-256, 90],
+        levels = {'low': [-256, 89],
                   'ideal': [90, 119],
                   'warning': [120, 139],
-                  'high': [140, 160],
+                  'high': [140, 159],
                   'emergency': [160, 256]
         }
 
