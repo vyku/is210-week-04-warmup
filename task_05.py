@@ -12,7 +12,8 @@ if MYINPUT <= 89:
 
     if MYINPUT >=90 or MYINPUT <=119:
         print BP_STATUS       
-    
+else:
+        print 'Emergency'
     
     
 
