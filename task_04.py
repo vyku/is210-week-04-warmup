@@ -9,13 +9,9 @@ LONGSTR = 'short'
 
 
 if MYINPUT <= MAX_LENGTH:
-    MYINPUT >= LENMAX 
     print LONGSTR
-    
-   
+else:
+    print 'Long'
 
 OUTPUT = 'That certainly was a {} story!'.format(LONGSTR)
 print OUTPUT
-
-
- 
